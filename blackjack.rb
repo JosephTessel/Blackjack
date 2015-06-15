@@ -108,7 +108,6 @@ class Hand
               standing[0] = standing[0] + 1
               puts "\nDealer loses."
               puts ["HERE COMES THE MONAYYYYYYY!- Naughty By Nature", "ALL I DO IS WIN! - DJ Khaled", "Easiest Game of my Life. - Jojo Tessel"].sample.colorize(:green)
-              binding.pry
             end
             break
           end
