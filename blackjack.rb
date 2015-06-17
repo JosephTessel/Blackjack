@@ -1,4 +1,3 @@
-require 'pry'
 require 'colorize'
 class PlayingCard
   attr_reader :suit, :rank
@@ -119,17 +118,24 @@ class Hand
     end
   end
 end
-
+score = [0,0]
 a = true
 until a == false
 hand = Hand.new
-print "Score: " + hand.standing.to_s
+print "Score: " + score.to_s
 puts
 2.times do hand.initial_hand end
 puts hand.game
-puts "Would you like to play again?"
+puts "Would you like to play again? (y/n)"
 a = gets.chomp
-  if a.downcase != "yes"
-    a = false
-  end
+if a.downcase == "y"
+  a = true
+elsif a.downcase == "n"
+  a = false
+else
+  puts "I'LL TAKE THAT AS A YES! LET'S GO GAMBLE, BAY-BEE!"
+end
+puts
+score[0] +=  hand.standing[0]
+score[1] +=  hand.standing[1]
 end
